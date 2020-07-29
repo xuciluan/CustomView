@@ -43,19 +43,19 @@ class SportView(context: Context, attributeSet: AttributeSet?, defStyleAttr: Int
         canvas?.drawArc(rect, -90f, 200f, false, paint)
 
         paint.style = Paint.Style.FILL
-//        paint.getTextBounds("abcdf", 0, "abcdf".length, textRect)
-//        canvas?.drawText(
-//            "abcdf",
-//            padding + radius / 2 - (textRect.right + textRect.left) / 2,
-//            padding + radius / 2 - (textRect.bottom + textRect.top) / 2,
-//            paint
-//        )
-        paint.getFontMetrics(metrics)
+        paint.getTextBounds("abcdf", 0, "abcdf".length, textRect)
         canvas?.drawText(
             "abcdf",
-            padding + radius / 2 ,
-            padding + radius / 2 - (metrics.ascent + metrics.descent) / 2,
+            padding + radius / 2 - (textRect.right + textRect.left) / 2,
+            padding + radius / 2 - (textRect.bottom + textRect.top) / 2,
             paint
         )
+//        paint.getFontMetrics(metrics)
+//        canvas?.drawText(
+//            "abcdf",
+//            padding + radius / 2 ,
+//            padding + radius / 2 - (metrics.ascent + metrics.descent) / 2,
+//            paint
+//        )
     }
 }
